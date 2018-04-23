@@ -26,7 +26,7 @@ $results = mysqli_query($connect, $query) or die(mysql_error());
 $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
 extract($row);
 ?>
-<form action="purchase.php" method="post">
+<form action="Testcheckout.php" method="post">
 <table border="0" cellspacing="1" cellpadding="3">
 <tr><td colspan="2" align="center">Your information available with us:</td></tr>
 <tr><td>Email Address:</td><td><input size="20" type="text" name="email_address" value="<?php echo $email_address; ?>"></td></tr>

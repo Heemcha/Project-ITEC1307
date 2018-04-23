@@ -28,7 +28,7 @@ height: 34px;
 line-height: 34px;
 padding: 0 20px;
 font-weight: bold;
-color: white;
+color: yellow;
 text-decoration: none;
 border-radius: 3px 3px 0 0;
 background-color: blue;
@@ -36,11 +36,11 @@ background-color: blue;
 .nav > li > a:hover {
 text-decoration: none;
 background: blue;
-background-color: navy;
+background-color:red;
 }
 .nav > li.active > a, .nav > li > a:active, .nav > .dropdown:hover > a {
-background: white;
-color: blue;
+background: yellow;
+color: red;
 }
 .dropdown {
 position: relative;

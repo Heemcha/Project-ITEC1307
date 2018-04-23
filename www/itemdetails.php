@@ -1,3 +1,5 @@
+<html>
+<body bgcolor="#FFFAD9">
 <?php
 include('topmenu.php');
 $connect = mysqli_connect("localhost", "root", "", "shopping") or
@@ -34,11 +36,14 @@ echo $feature6;
 echo "</td></tr><tr>";
 echo "<form method=\"POST\" action=\"cart.php?action=add&icode=$item_code&iname=$itemname&iprice=$itemprice\">";
 echo "<td colspan=\"2\" style=\"font-family:verdana; font-size:150%;\">";
-echo " Quantity: <input type=\"text\" name=\"quantity\" size=\"2\">&nbsp;&nbsp;&nbsp;Price: " . $itemprice;
-echo "</td></tr><tr><td colspan=\"2\"><input type=\"submit\"name=\"buynow\" value=\"Buy Now\" style=\"font-size:150%;\">";
-echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"submit\"name=\"addtocart\" value=\"Add To Cart\" style=\"font-size:150%;\"></td>";
+echo "<br>";
+echo " Quantity: <input type=\"text\" name=\"quantity\" size=\"2\"style=\"border: 1px #0000FF solid\">&nbsp;&nbsp;&nbsp;Price: " . $itemprice;
+echo "</td></tr><tr><td colspan=\"2\"><input type=\"submit\"name=\"buynow\" value=\"Buy Now\" style=\"font-size:120%;border: 1px #0000FF solid ;border-radius:5px\">";
+echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"submit\"name=\"addtocart\" value=\"Add To Cart\" style=\"font-size:120%;border: 1px #0000FF solid ;border-radius:5px\"></td>";
 echo" </form>";
 echo "</tr></table></table>";
 echo "<p style=\"font-size:140%;\">Description</p>";
 echo $itemdescription;
 ?>
+   </body>
+</html>

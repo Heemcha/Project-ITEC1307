@@ -1,3 +1,5 @@
+<html>
+<body bgcolor="#FFFAD9">
 <?php
 include('topmenu.php');
 if (session_status() == PHP_SESSION_NONE) {
@@ -75,7 +77,7 @@ echo "Invalid quantity entered";
 else
 {
 $query = "UPDATE cart SET cart_quantity = $modified_quantity WHERE cart_sess = '$sess' and cart_itemcode like '$itemcode'";
-$message = "<div style=\"width:200px; margin:auto;\">Quantity changed</div>";
+$message = "<div style=\"width:200px; margin:auto;\" >Quantity changed</div>";
 }
 }
 break;
@@ -97,3 +99,5 @@ include("showcart.php");
 echo "<SCRIPT LANGUAGE=\"JavaScript\">updateCart();</SCRIPT>";
 }
 ?>
+</body>
+</html>

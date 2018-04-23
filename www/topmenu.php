@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>Bintu Online Bazar</title>
+<title>IST Online Market</title>
 <link rel="stylesheet" href="css/style.css">
 <script language="JavaScript" type="text/JavaScript">
 function makeRequestObject(){
@@ -34,12 +34,12 @@ xmlhttp.send(null);
 }
 </script>
 </head>
-<body>
-<table width="100%" cellspacing="0" cellpadding="2">
+<body bgcolor="#E8918B">
+<table width="100%" cellspacing="0" cellpadding="4">
 <col style="width:30%">
 <col style="width:40%">
 <col style="width:20%">
-<tr><td style="background-color:cyan;color:Blue;"></td><td style="background-color:cyan;color:Blue;"></td><td style="background-color:cyan;color:Blue;">
+<tr><td style="background-color:#E8AB8B;color:Red;"></td><td style="background-color:#E8AB8B;color:Red;"></td><td style="background-color:#E8AB8B;color:Red;">
 <?php
 if (session_status() == PHP_SESSION_NONE) {
 session_start();
@@ -51,19 +51,19 @@ echo "<a href=\"logout.php\">Log Out</a></td></tr>";
 }
 else
 {
-echo "<a href=\"signin.php\">Login</a>&nbsp;&nbsp;&nbsp;";
-echo "<a href=\"validatesignup.php\">Signup</a></td></tr>";
+echo "<a href=\"signin.php\" style =\"color:red\">LOGIN</a>&nbsp;&nbsp;&nbsp;";
+echo "<a href=\"validatesignup.php\" style =\"color:red\">SINGUP</a></td></tr>";
 }
 ?>
-<tr><td style="font-size: 35px;color:blue;background-color:cyan;">
-<b>Bintu Online Bazar</b></font></td>
-<td bgcolor="cyan">
+<tr><td style="font-size: 35px;color:#ffff00;background-color:	#DB7093;">
+<b>IST Online Market</b></font></td>
+<td bgcolor="#DB7093">
 <form method="post" action="searchitems.php">
-<input size="50" type="text" name="tosearch">
-<input type="submit" name="submit" value="Search">
+<input size="50"   type="text" name="tosearch" style="height:25px">
+<input type="submit" name="submit" value="Search" style="height:40px ;background:#A3F7FF; border: 3px black solid;font-size:20px" >
 </form></td>
-<td bgcolor="cyan" ><a href="cart.php"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="images/cart.png"></img>
-<span id="cartcountinfo"></span></a>
+<td bgcolor="#DB7093" ><a href="cart.php"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="images/Cart2.png"></img>
+<span id="cartcountinfo" style="color:yellow"></span></a>
 </td></tr>
 </table>
 <div class="container">
@@ -75,8 +75,8 @@ echo "<a href=\"validatesignup.php\">Signup</a></td></tr>";
 <ul>
 <li><a href="itemlist.php?category=CellPhone">Smart Phones</a></li>
 <li><a href="itemlist.php?category=Laptop">Laptops</a></li>
-<li><a href="index.php">Cameras </a></li>
-<li><a href="index.php">Televisions</a></li>
+<li><a href="itemlist.php?category=Cameras">Cameras </a></li>
+<li><a href="itemlist.php?category=Televisions">Televisions</a></li>
 </ul>
 </li>
 <li class="dropdown">

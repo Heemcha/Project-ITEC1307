@@ -41,7 +41,7 @@ echo "</td><td>";
 echo "<input type=\"submit\" name=\"Submit\" value=\"Change quantity\"></form></td>";
 echo "<td>";
 echo "<form method=\"POST\" action=\"cart.php?action=delete&icode=$cart_itemcode\">";
-echo "<input type=\"submit\" name=\"Submit\" value=\"Delete Item\"></form></td></tr>";
+echo "<input type=\"submit\" name=\"Submit\" value=\"Delete Item\"></form></td></tr >";
 }
 echo "<tr><td >Total</td><td>$totalquantity</td><td></td><td></td><td>";
 $totalamount = number_format($totalamount, 2);
@@ -54,12 +54,12 @@ $totalquantity . " product(s) selected in your cart</div> ";
 <table border="0" style="margin:auto;">
 <tr><td style="padding: 10px;">
 <form method="POST" action="cart.php?action=empty">
-<input type="submit" name="Submit" value="Empty Cart" style="font-family:verdana; font-size:150%;" >
+<input type="submit" name="Submit" value="Empty Cart" style="font-family:verdana; font-size:140%;border-radius:5px;border: 1px #0000FF solid" >
 </form>
 </td><td>
 <form method="POST" action="checklogin.php">
 <input id="cartamount" name="cartamount" type="hidden" value= "<?php echo $totalamount ; ?>">
-<input type="submit" name="Submit" value="Checkout" style="font-family:verdana; font-size:150%;" >
+<input type="submit" name="Submit" value="Checkout" style="font-family:verdana; font-size:140%;border-radius:5px;border: 1px #0000FF solid" >
 </form>
 </td></tr></table>
 <?php

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>Bintu Online Bazar</title>
+<title>IST Online Market</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

@@ -1,4 +1,8 @@
+<html>
+<body bgcolor="#A6B5FF">
 <?php
+
+
 include 'menu.php';
 $connect = mysqli_connect("localhost", "root", "", "shopping") or die("Please, check your server connection.");
 $category=$_REQUEST['category'];
