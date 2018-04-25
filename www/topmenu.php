@@ -1,7 +1,7 @@
 <!DOCTYPE html>
+<head>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -9,63 +9,111 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
+
+
+
+
+<title>Big Online Market</title>
+<link rel="stylesheet" href="css/style.css">
+<script language="JavaScript" type="text/JavaScript">
+function makeRequestObject(){
+var xmlhttp=false;
+try {
+xmlhttp = new ActiveXObject('Msxml2.XMLHTTP'); // #1
+} catch (e) {
+try {
+xmlhttp = new
+ActiveXObject('Microsoft.XMLHTTP'); // #2
+} catch (E) {
+xmlhttp = false;
+}
+}
+if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+xmlhttp = new XMLHttpRequest(); // #3
+}
+return xmlhttp;
+}
+function updateCart(){ // #4
+var xmlhttp=makeRequestObject();
+xmlhttp.open('GET', 'countcart.php', true); // #5
+xmlhttp.onreadystatechange = function(){ // #6
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { // #7
+var ajaxCart = document.getElementById("cartcountinfo"); // #8
+ajaxCart.innerHTML = xmlhttp.responseText;
+}
+}
+xmlhttp.send(null);
+}
+</script>
+</head>
+<style>
     body {
         background-color: #CBFF88;
     }
-    </style>
-  <body>
-
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="background:yellow">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"style="color:yellow"></span>
-        <span class="icon-bar" style="color:yellow"></span>
-        <span class="icon-bar" style="color:yellow"></span>
-      </button>
-      <a class="navbar-brand" href="index.php">Home</a>
-      <a class="navbar-brand" href="itemlist.php?category=CellPhone">Smart Phones</a>
-      <a class="navbar-brand" href="itemlist.php?category=Laptop">Laptop</a>
-      <a class="navbar-brand" href="itemlist.php?category=Cameras">Camera</a>
-      <a class="navbar-brand" href="itemlist.php?category=Televisions">Televisions</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form method="post" action="searchitems.php" class="navbar-form navbar-left">
-        <input size="50" type="text" name="tosearch" class="form-control" placeholder="Search">
-        <button type="submit" name="submit" value="Search" class="btn btn-default">Submit</button>
-        </form>
-      
-      <ul class="nav navbar-nav navbar-right">
-      <?php
-        if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-        }
-        echo "<li id=\"userinfo\"><a href=\"signin.php\">Login</a></li>
-        <li><a href=\"validatesignup.php\">Signup</a></li></td></tr>";
-      ?>
-        <li><a class="navbar-brand" href="cart.php"><img style="max-width:25px;max-height:25px;" src="images/cart1.png" alt="Brand"></img>
-        <li id="cartcountinfo"></li></a></li>
-        
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+ </style>
+<body>
+<table width="100%" cellspacing="0" cellpadding="4">
+<col style="width:30%">
+<col style="width:40%">
+<col style="width:20%">
+<tr><td style="background-color:#E8AB8B;color:Red;"></td><td style="background-color:#E8AB8B;color:Red;"></td><td style="background-color:#E8AB8B;color:Red;">
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+session_start();
+}
+if (isset($_SESSION['emailaddress']))
+{
+echo "Welcome " . $_SESSION['emailaddress'] . "&nbsp;&nbsp;&nbsp;" ; // #9
+echo "<a href=\"logout.php\">Log Out</a></td></tr>";
+}
+else
+{
+echo "<a href=\"signin.php\" style =\"color:red\">LOGIN</a>&nbsp;&nbsp;&nbsp;";
+echo "<a href=\"validatesignup.php\" style =\"color:red\">SINGUP</a></td></tr>";
+}
+?>
+<tr><td style="font-size: 35px;color:#ffff00;background-color:	#DB7093;">
+<b> Big Online Market </b></font></td>
+<td bgcolor="#DB7093">
+<form method="post" action="searchitems.php">
+<input size="50"   type="text" name="tosearch" style="height:25px">
+<input type="submit" name="submit" value="Search" style="height:40px ;background:#A3F7FF; border: 3px black solid;font-size:20px" >
+</form></td>
+<td bgcolor="#DB7093" ><a href="cart.php"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="images/Cart2.png"></img>
+<span id="cartcountinfo" style="color:yellow"></span></a>
+</td></tr>
+</table>
+<div class="container">
+<nav>
+<ul class="nav">
+<li><a href="index.php">Home</a></li>
+<li class="dropdown">
+<a href="index.php">Electronics</a>
+<ul>
+<li><a href="itemlist.php?category=CellPhone">Smart Phones</a></li>
+<li><a href="itemlist.php?category=Laptop">Laptops</a></li>
+<li><a href="itemlist.php?category=Cameras">Cameras </a></li>
+<li><a href="itemlist.php?category=Televisions">Televisions</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="index.php">Home & Furniture</a>
+<ul class="large">
+<li><a href="index.php">Kitchen Essentials</a></li>
+<li><a href="index.php">Bath Essentials</a></li>
+<li><a href="index.php">Furniture</a></li>
+<li><a href="index.php">Dining & Serving</a></li>
+<li><a href="index.php">Cookware</a></li>
+</ul>
+</li>
+<li><a href="index.php">Books</a></li>
+</ul>
 </nav>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-  </head>
-</html>
+</div>
+<p>
